@@ -1,0 +1,122 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>My project1</title>
+
+</head>
+<body>
+<style>
+
+html, body {min-height:100%}
+body {
+  background: url(https://html5book.ru/wp-content/uploads/2017/04/aleksandar-radovanovic-13513.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+}
+img {
+			display: block;
+			margin: auto;
+			margin-bottom: 8px;
+			bottom-align: center;
+		}
+		div {
+			width: 202px;
+			margin: auto;
+			color: #fff; 
+			text-align: center;
+			
+        
+		}
+		button {
+		    width: 137px;
+			display: inline-block;
+			margin: 7px 7px 7px 0;
+			padding: 10px 10px;
+		}
+		
+button {
+  color: #fff; 
+  background: rgb(212,75,56); 
+} 
+button:hover { background: rgb(232,95,76); } 
+button:active { background: rgb(152,15,0); } 
+                                                          
+</style>
+
+	<div>
+		Размер изображения<br>
+		<input type="text"/><br>
+		<input type="text"/><br>
+		<button onclick="changeSize()">Применить</button>
+	</div>
+	<button onclick="original()">Убрать эффекты</button>
+	<button onclick="grayscale()">GrayScale</button>
+	<button onclick="brightness()">Brightness</button>
+	<button onclick="contrast()">Contrast</button>
+	<button onclick="huerotate()">Huerotate</button>
+	<button onclick="invert()">Invert</button>
+	<button onclick="opacity()">Opacity</button>
+	<button onclick="saturate()">Saturate</button>
+	<button onclick="sepia()">Sepia</button>
+	<button onclick="dropshadow()">Dropshadow</button>
+	<hr>
+
+	<div id="img_container" style="text-align: center;">
+		<img src="bg.png" alt="image edited" height="300" width="300">
+	</div>
+
+ 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+ 	<script>
+ 		var img = document.getElementsByTagName('img')[0];
+ 		function changeSize(){
+ 			img.style.width =  document.getElementsByTagName('input')[0].value + 'px';
+ 			img.style.height = document.getElementsByTagName('input')[1].value + 'px';
+ 		}
+
+		function original() {
+			img.style.filter = '';
+		}
+
+		function grayscale() {
+			img.style.filter = 'grayscale(100%)';
+		}
+
+		function brightness() {
+			img.style.filter = 'brightness(0.30)';
+		}
+
+		function contrast() {
+			img.style.filter = 'contrast(180%)';
+		}
+
+		function huerotate() {
+			img.style.filter = 'hue-rotate(180deg)';
+		}
+
+		function invert() {
+			img.style.filter = 'invert(100%)';
+		}
+
+		function opacity() {
+			img.style.filter = 'opacity(50%)';
+		}
+
+		function saturate() {
+			img.style.filter = 'saturate(7)';
+		}
+
+		function sepia() {
+			img.style.filter = 'sepia(100%)';
+		}
+
+		function dropshadow() {
+			img.style.filter = 'drop-shadow(8px 8px 10px red)';
+		}
+ 	</script>
+</body>
+</html>
